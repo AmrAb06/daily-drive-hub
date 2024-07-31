@@ -1,0 +1,6 @@
+venv
+.venv
+__pycache__
+database.db
+notes.txt
+test.py
