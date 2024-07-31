@@ -9,7 +9,8 @@ layout1.html -> Standard pages
 layout2.html -> Login and register pages
 
 ## How to run locally
-### ! It is recommended to create a virtual environment first !
+### It is recommended to create a virtual environment first
+
 1.  pip install -r requirements.txt
 
 2a. (Windows) set FLASK_APP=app.py
