@@ -1,0 +1,36 @@
+{% extends "layout_1.html" %}
+
+{% block title %} Journal {% endblock %}
+
+{% block header %}<div class="container h5"><mark class="rounded-bottom">Journal</mark></div>{% endblock %}
+
+{% block main %}
+<div class="container">
+
+    {% if error %}
+    <div class="alert alert-danger text-center">
+        {{ error }}
+    </div>
+    {% endif %}
+
+    {% if success %}
+    <div class="alert alert-success text-center">
+        {{ success }}
+    </div>
+    {% endif %}
+
+    <form method="post">
+
+        <div class="container width-fit">
+            <input class="form-control mb-2 width-fit" placeholder="Title" type="text" name="title" required>
+        </div>
+        
+        <textarea class="form-control mb-2" rows="8" name="log" required></textarea>
+
+        <div class="container width-fit">
+            <button class="btn btn-dark" type="submit">Add</button>
+        </div>
+    </form>
+
+</div>
+{% endblock %}

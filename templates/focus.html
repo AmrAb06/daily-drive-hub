@@ -1,0 +1,30 @@
+{% extends "layout_1.html" %}
+
+{% block title %} Focus {% endblock %}
+
+{% block header %}<div class="container h5"><mark class="rounded-bottom">Focus</mark></div>{% endblock %}
+
+{% block main %}
+<div class="container">
+
+    <div class="container width-fit"> 
+        <div class="d-inline-block">
+            <h3 class="text-center">Pomodoro Timer</h3>
+            <iframe class="rounded" src="https://pomofocus.io/"></iframe>
+        </div>
+
+        <div class="d-inline-block">
+            <h3 class="text-center">Music</h3>
+            <iframe class="rounded" src="https://www.youtube.com/embed/jfKfPfyJRdk?si=dxTq_Fe2RiHZj8a3&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    
+        <hr>
+
+        <h3 class="text-center">Temporary Notes</h3>
+
+        <textarea class="form-control mb-2 W-100" rows="16"></textarea>
+
+    </div>
+
+</div>
+{% endblock %}

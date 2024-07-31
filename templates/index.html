@@ -1,0 +1,48 @@
+{% extends "layout_1.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block main %}
+
+<div class="container width-fit">
+
+    <h3 class="text-secondary text-center">Welcome {{ username }}</h3>
+
+    <hr>
+
+    <div class="card d-inline-block m-1" style="width: 18rem;">
+        <img src="{{ url_for('static', filename='card-images/journal-card.png') }}" class="card-img-top" alt="journal book with pen">
+        <div class="card-body">
+            <h5 class="card-title">Journal</h5>
+            <p class="card-text">Log your thought process throughout the days to look back and find inspiration and clarity.</p>
+            <a href="/journal" class="btn btn-dark">Go to journal</a>
+        </div>
+    </div>
+
+    <div class="card d-inline-block m-1" style="width: 18rem;">
+        <img src="{{ url_for('static', filename='card-images/focus-card.png') }}" class="card-img-top" alt="person working on laptop with headphones">
+        <div class="card-body">
+            <h5 class="card-title">Focus</h5>
+            <p class="card-text">Listen to music while running a pomodoro timer to achieve maximum productivity.</p>
+            <a href="/focus" class="btn btn-dark">Go to focus</a>
+        </div>
+    </div>
+
+    <div class="card d-inline-block m-1" style="width: 18rem;">
+        <img src="{{ url_for('static', filename='card-images/profile-card.png') }}" class="card-img-top" alt="profile">
+        <div class="card-body">
+            <h5 class="card-title">Profile</h5>
+            <p class="card-text">Check your profile that is your username, email, password and change whatever you like.</p>
+            <a href="/profile" class="btn btn-dark">Go to profile</a>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container alert alert-primary width-fit">
+        Note that time information in this website is displayed in UTC and not in your timezone. Sorry for the inconvenience.
+    </div>
+      
+    
+</div>
+{% endblock %}

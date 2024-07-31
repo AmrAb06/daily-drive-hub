@@ -1,0 +1,43 @@
+{% extends "layout_1.html" %}
+
+{% block title %} Journal {% endblock %}
+
+{% block header %}<div class="container h5"><mark class="rounded-bottom">Journal</mark></div>{% endblock %}
+
+{% block main %}
+<div class="container">
+    
+    {% if success %}
+        <div class="alert alert-success text-center">
+            {{ success }}
+        </div>
+    {% endif %}
+        <a class="btn btn-dark mb-2" href="journal/add">ADD</a>
+
+        <form method="post">
+            <button class="btn btn-dark mb-2" type="submit" name="search" value="1" >SEARCH</button>
+        </form>
+
+
+    <hr>
+
+    {% for log in logs %}
+
+    <div class="card mb-2">
+        <div class="card-header">{{ log['date'] }}</div>
+        <div class="card-body">
+            <h5 class="card-title">{{ log['title'] }}</h5>
+                <p class="card-text">{{ log['log'][:70] }}</p>
+            <form method="post">
+                <button class="btn btn-outline-dark" type="submit" name="view_log" value="{{ log['log_id'] }}">View log</button>
+            </form>
+        
+        </div>
+    </div>
+
+    {% endfor %}
+
+    <hr>
+    
+</div>
+{% endblock %}

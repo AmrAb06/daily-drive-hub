@@ -1,0 +1,36 @@
+{% extends "layout_1.html" %}
+
+{% block title %} Journal {% endblock %}
+
+{% block header %}<div class="container h5"><mark class="rounded-bottom">Journal</mark></div>{% endblock %}
+
+{% block main %}
+<div class="container">
+
+    {% if error %}
+    <div class="alert alert-danger text-center">
+        {{ error }}
+    </div>
+    {% endif %}
+
+    {% if success %}
+    <div class="alert alert-success text-center">
+        {{ success }}
+    </div>
+    {% endif %}
+
+    <form method="post">
+
+        <div class="width-fit">
+            <input class="form-control mb-2 width-fit" placeholder="Title" type="text" name="title" value="{{ log['title'] }}" required>
+        </div>
+        
+        <textarea class="form-control mb-2" rows="8" name="log" required>{{ log['log'] }}</textarea>
+
+        <div class="container width-fit">
+            <button class="btn btn-dark" type="submit" name="submit_edit" value="{{ log['log_id'] }}">Submit Edit</button>
+        </div>
+    </form>
+
+</div>
+{% endblock %}

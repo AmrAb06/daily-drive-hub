@@ -1,0 +1,37 @@
+{% extends "layout_2.html" %}
+
+{% block title %} Register {% endblock %}
+
+{% block body %}
+<div class="container width-fit shadow-lg rounded-2 p-5">
+
+        {% if error %}
+        <div class="alert alert-danger text-center">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        {% if success %}
+        <div class="alert alert-success text-center">
+            {{ success }}
+        </div>
+        {% endif %}
+
+        <form method="post">
+            <input class="form-control mb-2" placeholder="Username" type="text" name="username" autofocus required>
+            
+            <input class="form-control mb-2" placeholder="Email" type="email" name="email" required>
+
+            <input class="form-control mb-2" placeholder="Password" type="password" name="password" required>
+
+            <input class="form-control mb-3" placeholder="Confirm Password" type="password" name="confirmation" required>
+
+            <button class="btn btn-outline-primary w-100" type="submit">Register</button>
+        </form>
+
+        <hr>
+
+        Have an account?  <a href="/login" class="text-primary">Log in</a>
+
+</div>
+{% endblock %}

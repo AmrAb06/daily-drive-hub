@@ -1,0 +1,38 @@
+{% extends "layout_1.html" %}
+
+{% block title %} Journal {% endblock %}
+
+{% block header %}<div class="container h5"><mark class="rounded-bottom">Journal</mark></div>{% endblock %}
+
+{% block main %}
+<div class="container width-fit">
+
+    <form class="container width-fit" method="post">
+        <input class="form-control mb-2 width-fit" type="date" name="date_search">
+        <input class="form-control mb-2 width-fit" type="text" placeholder="Title" name="title_search">
+        <button class="btn btn-dark" type="submit" name="search_button" value="1">SEARCH</button>
+    </form>
+
+    <hr>
+    {% if error %}
+    <div class="alert alert-warning" role="alert">
+        {{ error }}
+    </div>
+    {% else %}
+        {% for log in logs %}
+            <div class="card mb-2">
+                <div class="card-header">{{ log['date'] }}</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ log['title'] }}</h5>
+                        <p class="card-text">{{ log['log'][:70] }}</p>
+                    <form method="post">
+                        <button class="btn btn-outline-dark" type="submit" name="view_log" value="{{ log['log_id'] }}">View log</button>
+                    </form>
+                
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+</div>
+{% endblock %}

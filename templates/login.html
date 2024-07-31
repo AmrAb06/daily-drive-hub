@@ -1,0 +1,26 @@
+{% extends "layout_2.html" %}
+
+{% block title %} Login {% endblock %}
+
+{% block body %}
+<div class="container width-fit shadow-lg rounded-2 p-5">
+
+        {% if error %}
+        <div class="alert alert-danger text-center">
+            {{ error }}
+        </div>
+        {% endif %}
+      
+        <form method="post">
+            <input class="form-control mb-2" placeholder="Email" type="email" name="email" required>
+
+            <input class="form-control mb-3" placeholder="Password" type="password" name="password" required>
+
+            <button class="btn btn-outline-primary w-100" type="submit">Login</button>
+        </form>
+
+        <hr>
+
+        Don't have an account? <a href="/register" class="text-primary">Register</a>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "layout_1.html" %}
+
+{% block title %} Journal {% endblock %}
+
+{% block header %}<div class="container h5"><mark class="rounded-bottom">Journal</mark></div>{% endblock %}
+
+{% block main %}
+<div class="container">
+
+    <form class="mb-2" method="post">
+            <button class="btn btn-dark" name="edit" value="{{log['log_id']}}">Edit</button>
+            <button class="btn btn-dark"name="delete" value="{{log['log_id']}}">Delete</button>
+    </form>
+
+    <p class="text-bg-secondary rounded width-fit p-1">{{ log['date'] }}</p>
+
+    <hr>
+
+    <h5>{{ log['title'] }}</h5>
+
+    <textarea class="form-control" rows="8" readonly>{{ log['log'] }}</textarea>
+
+</div>
+{% endblock %}

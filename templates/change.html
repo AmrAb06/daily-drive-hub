@@ -1,0 +1,42 @@
+{% extends "layout_2.html" %}
+
+{% block title %} 
+Profile
+{% endblock %}
+
+{% block body %}
+<div class="container width-fit shadow-lg rounded-2 p-5">
+
+    {% if error %}
+    <div class="alert alert-danger text-center">
+        {{ error }}
+    </div>
+    {% endif %}
+
+    
+    {% if change_username %}
+    <form method="post">
+        <label class="form-label">Current Username</label>
+        <input class="form-control mb-3" value="{{ username }}" disabled>
+        <input class="form-control mb-3" placeholder="New Username" type="text" name="username" required autofocus>
+        <button class="btn btn-outline-primary w-100" type="submit">Change username</button>
+    </form>
+
+    {% elif change_email %}
+    <form method="post">
+        <label class="form-label">Current Email</label>
+        <input class="form-control mb-3" value="{{ email }}" disabled>
+        <input class="form-control mb-3" placeholder="New Email" type="email" name="email" required autofocus>
+        <button class="btn btn-outline-primary w-100" type="submit">Change Email</button>
+    </form>
+
+    {% elif change_password %}
+    <form method="post">
+        <input class="form-control mb-3" placeholder="Current Password" type="password" name="current_password" required autofocus>
+        <input class="form-control mb-3" placeholder="New Password" type="password" name="password" required>
+        <input class="form-control mb-3" placeholder="Confirm Password" type="password" name="confirmation" required>
+        <button class="btn btn-outline-primary w-100" type="submit">Change Password</button>
+    </form>
+    {% endif %}
+
+{% endblock %}

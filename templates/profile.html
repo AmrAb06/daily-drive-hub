@@ -1,0 +1,30 @@
+{% extends "layout_1.html" %}
+
+{% block title %} Profile {% endblock %}
+
+{% block header %}<div class="container h5"><mark class="rounded-bottom">Profile</mark></div>{% endblock %}
+
+{% block main %}
+<div class="container">
+    {% if success %}
+    <div class="alert alert-success text-center">
+        {{ success }}
+    </div>
+    {% endif %}
+</div>
+
+<div class="container width-fit">
+    <form method="post">
+        <p><span class="fw-bold">Date Joined:</span> {{ user['join_date'] }}</p>
+        <p><span class="fw-bold">ID:</span> {{ user['user_id'] }}</p>
+
+        <p><span class="fw-bold">Username:</span> {{ user['username'] }}</p>
+        <button class="btn btn-dark" name="change_username" value="1">Change Username</button>
+        <hr>
+        <p><span class="fw-bold">Email:</span> {{ user['email'] }}</p>
+        <button class="btn btn-dark" name="change_email" value="1">Change Email</button>
+
+        <button class="btn btn-dark" name="change_password" value="1">Change Password</button>
+    </form>
+</div>
+{% endblock %}
