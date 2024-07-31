@@ -1,8 +1,8 @@
 import bcrypt
 from flask import Flask, redirect, render_template, request, session
 from os import urandom
-from re import match
 from cs50 import SQL
+from functions import *
 
 app = Flask(__name__)
 
@@ -261,8 +261,3 @@ def profile():
 
         user = db.execute("SELECT * FROM users WHERE user_id = ?", session['user_id'])[0]
         return render_template("profile.html", user=user, success="password successfully changed.")
-
-
-def validate_email_syntax(email):
-    pattern = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
-    return match(pattern, email) is not None
