@@ -10,6 +10,9 @@ secret_key = urandom(24).hex()
 app.secret_key = secret_key
 app.config['SESSION_COOKIE_SECURE'] = True
 
+if not database_found():
+    create_database()
+
 db = SQL("sqlite:///database.db")
 
 
